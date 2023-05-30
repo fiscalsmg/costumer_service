@@ -23,7 +23,7 @@ class ClientDAO:
         con: Connection = Connection.get_connection()
         cursor = con.cursor()
         cursor.execute(
-            "CREATE TABLE IF NOT EXISTS clientes (telefono INT PRIMARY KEY, nombre VARCHAR(255), apellido VARCHAR(255), edad INT)"
+            "CREATE TABLE IF NOT EXISTS clientes (telefono VARCHAR(255) PRIMARY KEY, nombre VARCHAR(255), apellido VARCHAR(255), edad INT)"
         )
         con.commit()
         cursor.close()
