@@ -1,6 +1,8 @@
 import logging
 
 import mysql.connector
+from app.config.settings import settings
+
 
 logger = logging.getLogger(__name__)
 
@@ -8,11 +10,11 @@ logger = logging.getLogger(__name__)
 class Connection:
     """Clase encargada de conectar y crear la tabla base del ejercicio"""
 
-    _DATABASE = "clientdb"
-    _USUERNAME = "admin"
-    _PASSWORD = "16091106"
-    _BD_PORT = "3306"
-    _HOST = "database-1.cv056iak7inx.us-east-2.rds.amazonaws.com"
+    _DATABASE = settings.DATABASE
+    _USUERNAME = settings.USUERNAME
+    _PASSWORD = settings.PASSWORD
+    _BD_PORT = settings.BD_PORT
+    _HOST = settings.HOST
 
     @classmethod
     def get_connection(cls):
